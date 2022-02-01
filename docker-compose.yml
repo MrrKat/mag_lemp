@@ -1,0 +1,92 @@
+version: "3.7"
+services:
+  varnish:
+    image: varnish:latest
+    ports:
+      - "6081:6081"
+      - "6085:6085"
+    environment:
+      - VARNISH_SIZE=2G
+    command: "-p default_keep=300"
+    depends_on:
+      - "web-server"      
+  web-server:
+    build:
+      context: ./bin/php8/
+    restart: always
+    volumes:
+      - "./www/:/var/www/html/"
+      - "./conf/ssl/:/etc/apache2/ssl"
+      - "./conf/vhost/:/etc/apache2/sites-available/"
+      - "./logs/apache/:/var/log/apache2/"
+    ports:
+      - "80:80"
+      - "443:443"
+  elasticsearch:
+    image: nshou/elasticsearch-kibana
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - "./data/elasticsearch-data:/usr/share/elasticsearch/data"
+    ports:
+      - "9200:9200"
+      - "5601:5601"
+  opensearch:
+    image: opensearchproject/opensearch:1.2.4
+    container_name: opensearch-node1
+    environment:
+      - bootstrap.memory_lock=true 
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536 # maximum number of open files for the OpenSearch user, set to at least 65536 on modern systems
+        hard: 65536
+    volumes:
+            - "./data/opensearch-data/:/usr/share/opensearch/data"
+    ports:
+      - "9300:9200"
+      - "9600:9600" # required for Performance Analyzer
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - "./data/rabbitmq/:/var/lib/rabbitmq/"
+  mysql-server:
+    image: mysql:8.0.19
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=luxinten
+      - MYSQL_DATABASE=magento
+      - MYSQL_USER=magento
+      - MYSQL_PASSWORD=magento
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.0.1
+    restart: always
+    environment:
+      PMA_HOST: mysql-server
+      PMA_USER: root
+      PMA_PASSWORD: luxinten
+    ports:
+      - "5000:80"
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+volumes:
+  mysql-data:
