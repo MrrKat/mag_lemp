@@ -1,0 +1,2 @@
+194.32.136.139 - - [01/Feb/2022:18:11:18 +0000] "GET / HTTP/1.1" 200 33 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 OPR/82.0.4227.58"
+194.32.136.139 - - [01/Feb/2022:18:11:19 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://mag.sys-ad.ml/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 OPR/82.0.4227.58"
