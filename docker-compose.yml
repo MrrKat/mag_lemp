@@ -9,19 +9,50 @@ services:
       - VARNISH_SIZE=2G
     command: "-p default_keep=300"
     depends_on:
-      - "web-server"      
-  web-server:
-    build:
-      context: ./bin/php8/
-    restart: always
-    volumes:
-      - "./www/:/var/www/html/"
-      - "./conf/ssl/:/etc/apache2/ssl"
-      - "./conf/vhost/:/etc/apache2/sites-available/"
-      - "./logs/apache/:/var/log/apache2/"
+      - "nginx"      
+  nginx:
+    image: nginx:latest
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - "./www/:/var/www/html/"
+      - "./conf/vhost/:/etc/nginx/conf.d/"
+      - "./logs/nginx/:/var/log/nginx/"
+      - "./conf/ssl/:/etc/nginx/ssl/"
+    links:
+      - php81
+      - php74
+  php81:
+    build:
+      context: ./bin/php81/
+    restart: always
+    volumes:
+      - "./www/:/var/www/html/"
+  php74:
+    build:
+      context: ./bin/php74/
+    restart: always
+    volumes:
+      - "./www/:/var/www/html/"
+  php73:
+    build:
+      context: ./bin/php73/
+    restart: always
+    volumes:
+    - "./www/:/var/www/html/"
+ php72:
+    build:
+      context: ./bin/php72/
+    restart: always
+    volumes:
+      - "./www/:/var/www/html/"
+  php56:
+    build:
+      context: ./bin/php56/
+    restart: always
+    volumes:
+      - "./www/:/var/www/html/"
   elasticsearch:
     image: nshou/elasticsearch-kibana
     environment:
@@ -58,6 +89,7 @@ services:
       - "9600:9600" # required for Performance Analyzer
   rabbitmq:
     image: rabbitmq:3-management-alpine
+    restart: always
     ports:
       - "5672:5672"
       - "15672:15672"

@@ -1,4 +1,4 @@
-FROM php:8-apache
+FROM php:5.6-fpm
 RUN apt-get -y update --fix-missing && \
     apt-get upgrade -y
 RUN docker-php-ext-install mysqli pdo pdo_mysql
@@ -33,12 +33,10 @@ RUN docker-php-ext-install bcmath intl
 RUN apt update && apt-get -y --no-install-recommends install --fix-missing libxml2-dev && docker-php-ext-install soap
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 RUN apt update && apt-get -y --no-install-recommends install --fix-missing libxslt1-dev python-dev && docker-php-ext-install xsl zip opcache
-
+RUN docker-php-ext-install sockets
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN a2enmod ssl && a2enmod rewrite
-RUN mkdir -p /etc/apache2/ssl
-RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+RUN mkdir -p /etc/nginx/ssl
 
 EXPOSE 80
 EXPOSE 443
