@@ -41,18 +41,18 @@ services:
     restart: always
     volumes:
     - "./www/:/var/www/html/"
- php72:
+  php72:
     build:
       context: ./bin/php72/
     restart: always
     volumes:
-      - "./www/:/var/www/html/"
+    - "./www/:/var/www/html/"
   php56:
     build:
       context: ./bin/php56/
     restart: always
     volumes:
-      - "./www/:/var/www/html/"
+    - "./www/:/var/www/html/"
   elasticsearch:
     image: nshou/elasticsearch-kibana
     environment:
