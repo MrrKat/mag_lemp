@@ -1,0 +1,10 @@
+2022/02/01 16:08:21 [warn] 1#1: the "ssl" directive is deprecated, use the "listen ... ssl" directive instead in /etc/nginx/conf.d/000-default.conf:22
+2022/02/01 16:08:21 [notice] 1#1: using the "epoll" event method
+2022/02/01 16:08:21 [notice] 1#1: nginx/1.21.6
+2022/02/01 16:08:21 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/02/01 16:08:21 [notice] 1#1: OS: Linux 5.4.0-29-generic
+2022/02/01 16:08:21 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/02/01 16:08:21 [notice] 1#1: start worker processes
+2022/02/01 16:08:21 [notice] 1#1: start worker process 22
+2022/02/01 16:08:21 [notice] 1#1: start worker process 23
+2022/02/01 16:08:21 [notice] 1#1: start worker process 24
