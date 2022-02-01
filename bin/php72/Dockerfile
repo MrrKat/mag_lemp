@@ -5,8 +5,6 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN apt-get -y update && \
     apt-get -y --no-install-recommends install nano wget \
 dialog \
-libsqlite3-dev \
-libsqlite3-0 && \
     apt-get -y --no-install-recommends install default-mysql-client \
 zlib1g-dev \
 libzip-dev \
