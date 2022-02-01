@@ -33,7 +33,6 @@ RUN docker-php-ext-install bcmath intl
 RUN apt update && apt-get -y --no-install-recommends install --fix-missing libxml2-dev && docker-php-ext-install soap
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 RUN apt update && apt-get -y --no-install-recommends install --fix-missing libxslt1-dev python-dev && docker-php-ext-install xsl zip opcache
-RUN docker-php-ext-install sockets
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN mkdir -p /etc/nginx/ssl
