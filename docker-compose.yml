@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   varnish:
-    image: varnish:latest
+    image: mrrkat/varnish
     restart: always
     ports:
       - "80:80"
@@ -16,7 +16,7 @@ services:
     links:
       - "nginx"      
   nginx:
-    image: nginx:latest
+    image: mrrkat/nginx
     restart: always
     ports:
       - "443:443"
@@ -28,38 +28,38 @@ services:
     links:
       - php81
       - php74
+      - php73
+      - php72
+      - php56
   php81:
-    build:
-      context: ./bin/php81/
+    image: mrrkat/php81-fpm
     restart: always
     volumes:
       - "./www/:/var/www/html/"
   php74:
-    build:
-      context: ./bin/php74/
+    image: mrrkat/php74-fpm
     restart: always
     volumes:
       - "./www/:/var/www/html/"
   php73:
-    build:
-      context: ./bin/php73/
+    image: mrrkat/php73-fpm
     restart: always
     volumes:
     - "./www/:/var/www/html/"
   php72:
-    build:
-      context: ./bin/php72/
+    image: mrrkat/php72-fpm
     restart: always
     volumes:
     - "./www/:/var/www/html/"
   php56:
-    build:
-      context: ./bin/php56/
+    image: mrrkat/php56-fpm
+#    build:
+#      context: ./bin/php56/
     restart: always
     volumes:
     - "./www/:/var/www/html/"
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.0
+    image: mrrkat/elasticsearch-7.17
     restart: always
     environment:
       - bootstrap.memory_lock=true
@@ -74,8 +74,7 @@ services:
       - "9300:9300"
       - "5601:5601"
   opensearch:
-    image: opensearchproject/opensearch:1.2.4
-    container_name: opensearch-node1
+    image: mrrkat/opensearch-1.2
     restart: always
     environment:
       - bootstrap.memory_lock=true 
@@ -92,13 +91,13 @@ services:
       - "9400:9200"
       - "9600:9600" # required for Performance Analyzer
   rabbitmq:
-    image: rabbitmq:3-management-alpine
+    image: mrrkat/rabbitmq-3.9
     restart: always
     ports:
       - "5672:5672"
       - "15672:15672"
   mysql-server:
-    image: mysql:8.0.19
+    image: mrrkat/mysql-8.0
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=luxinten
@@ -110,7 +109,7 @@ services:
     ports:
       - "3306:3306"
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:5.0.1
+    image: mrrkat/phpmyadmin-5.0
     restart: always
     environment:
       PMA_HOST: mysql-server
@@ -119,7 +118,7 @@ services:
     ports:
       - "5000:80"
   redis:
-    image: redis:latest
+    image: mrrkat/redis
     restart: always
     ports:
       - "6379:6379"
