@@ -44,3 +44,93 @@
 2022/02/01 18:19:16 [notice] 1#1: start worker process 22
 2022/02/01 18:19:16 [notice] 1#1: start worker process 23
 2022/02/01 18:19:16 [notice] 1#1: start worker process 24
+2022/02/01 18:26:39 [error] 23#23: *1 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 54.205.32.147, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/01 18:26:40 [error] 22#22: *2 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 54.161.2.15, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/01 18:39:46 [error] 24#24: *3 open() "/var/www/html/_ignition/execute-solution" failed (2: No such file or directory), client: 45.146.165.37, server: localhost, request: "GET /_ignition/execute-solution HTTP/1.1", host: "195.226.192.204:80"
+2022/02/01 19:01:54 [error] 23#23: *4 open() "/var/www/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 42.238.255.192, server: localhost, request: "GET /boaform/admin/formLogin?username=adminisp&psd=adminisp HTTP/1.0"
+2022/02/01 19:37:13 [error] 23#23: *9 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 62.102.148.69, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "195.226.192.204:80"
+2022/02/01 20:31:38 [error] 23#23: *13 open() "/var/www/html/.env" failed (2: No such file or directory), client: 109.237.103.9, server: localhost, request: "GET /.env HTTP/1.1", host: "195.226.192.204"
+2022/02/01 20:31:38 [error] 23#23: *14 open() "/var/www/html/.env" failed (2: No such file or directory), client: 109.237.103.9, server: localhost, request: "GET /.env HTTP/1.1", host: "195.226.192.204"
+2022/02/01 21:16:35 [error] 23#23: *26 open() "/var/www/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 182.127.22.162, server: localhost, request: "GET /boaform/admin/formLogin?username=adminisp&psd=adminisp HTTP/1.0"
+2022/02/01 21:57:13 [error] 23#23: *31 open() "/var/www/html/dispatch.asp" failed (2: No such file or directory), client: 45.137.21.134, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "195.226.192.204"
+2022/02/01 22:40:03 [error] 23#23: *35 open() "/var/www/html/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application" failed (2: No such file or directory), client: 192.241.212.251, server: localhost, request: "GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application HTTP/1.1", host: "195.226.192.204"
+2022/02/01 22:47:50 [error] 23#23: *36 open() "/var/www/html/owa/auth/logon.aspx" failed (2: No such file or directory), client: 192.241.211.204, server: localhost, request: "GET /owa/auth/logon.aspx?url=https%3a%2f%2f1%2fecp%2f HTTP/1.1", host: "195.226.192.204"
+2022/02/01 23:52:23 [error] 22#22: *56 open() "/var/www/html/ReportServer" failed (2: No such file or directory), client: 192.241.205.75, server: localhost, request: "GET /ReportServer HTTP/1.1", host: "195.226.192.204"
+2022/02/01 23:58:56 [error] 24#24: *57 open() "/var/www/html/login" failed (2: No such file or directory), client: 192.241.205.99, server: localhost, request: "GET /login HTTP/1.1", host: "195.226.192.204"
+2022/02/02 00:10:15 [error] 23#23: *58 open() "/var/www/html/dispatch.asp" failed (2: No such file or directory), client: 45.137.21.134, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "195.226.192.204"
+2022/02/02 00:42:36 [error] 24#24: *61 open() "/var/www/html/mifs/.;/services/LogService" failed (2: No such file or directory), client: 45.146.165.37, server: localhost, request: "POST /mifs/.;/services/LogService HTTP/1.1", host: "195.226.192.204:443", referrer: "https://195.226.192.204:443"
+2022/02/02 00:54:24 [error] 24#24: *66 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 23.224.186.47, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "195.226.192.204"
+2022/02/02 00:54:30 [error] 24#24: *67 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 23.224.186.47, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "195.226.192.204"
+2022/02/02 00:54:32 [error] 24#24: *68 open() "/var/www/html/sitemap.xml" failed (2: No such file or directory), client: 23.224.186.47, server: localhost, request: "GET /sitemap.xml HTTP/1.1", host: "195.226.192.204"
+2022/02/02 01:36:02 [error] 23#23: *82 open() "/var/www/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 182.115.235.230, server: localhost, request: "GET /boaform/admin/formLogin?username=adminisp&psd=adminisp HTTP/1.0"
+2022/02/02 01:52:20 [error] 23#23: *85 "/var/www/html/console/index.php" is not found (2: No such file or directory), client: 45.146.165.37, server: localhost, request: "GET /console/ HTTP/1.1", host: "195.226.192.204:443"
+2022/02/02 01:56:21 [error] 23#23: *86 open() "/var/www/html/config/getuser" failed (2: No such file or directory), client: 62.171.132.199, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "195.226.192.204:80"
+2022/02/02 02:42:03 [error] 23#23: *91 open() "/var/www/html/Autodiscover/Autodiscover.xml" failed (2: No such file or directory), client: 45.146.165.37, server: localhost, request: "POST /Autodiscover/Autodiscover.xml HTTP/1.1", host: "195.226.192.204:443"
+2022/02/02 02:59:38 [error] 22#22: *95 open() "/var/www/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 125.41.10.20, server: localhost, request: "GET /boaform/admin/formLogin?username=adminisp&psd=adminisp HTTP/1.0"
+2022/02/02 03:27:21 [error] 23#23: *96 open() "/var/www/html/_ignition/execute-solution" failed (2: No such file or directory), client: 45.146.165.37, server: localhost, request: "GET /_ignition/execute-solution HTTP/1.1", host: "195.226.192.204:443"
+2022/02/02 04:50:30 [error] 22#22: *111 open() "/var/www/html/dispatch.asp" failed (2: No such file or directory), client: 45.137.21.134, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "195.226.192.204"
+2022/02/02 05:24:01 [error] 22#22: *128 open() "/var/www/html/0bef" failed (2: No such file or directory), client: 172.105.89.161, server: localhost, request: "GET /0bef HTTP/1.0"
+2022/02/02 05:56:47 [error] 24#24: *152 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 05:56:47 [error] 24#24: *152 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "mag.sys-ad.ml", referrer: "https://mag.sys-ad.ml/"
+2022/02/02 05:56:52 [error] 24#24: *152 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 06:13:19 [error] 23#23: *159 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 06:13:21 [error] 23#23: *159 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 06:13:23 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/02/02 06:13:23 [notice] 23#23: gracefully shutting down
+2022/02/02 06:13:23 [notice] 22#22: gracefully shutting down
+2022/02/02 06:13:23 [notice] 24#24: gracefully shutting down
+2022/02/02 06:13:23 [notice] 22#22: exiting
+2022/02/02 06:13:23 [notice] 24#24: exiting
+2022/02/02 06:13:23 [notice] 23#23: exiting
+2022/02/02 06:13:23 [notice] 23#23: exit
+2022/02/02 06:13:23 [notice] 22#22: exit
+2022/02/02 06:13:23 [notice] 24#24: exit
+2022/02/02 06:13:23 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2022/02/02 06:13:23 [notice] 1#1: worker process 23 exited with code 0
+2022/02/02 06:13:23 [notice] 1#1: worker process 24 exited with code 0
+2022/02/02 06:13:23 [notice] 1#1: signal 29 (SIGIO) received
+2022/02/02 06:13:23 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/02/02 06:13:23 [notice] 1#1: worker process 22 exited with code 0
+2022/02/02 06:13:23 [notice] 1#1: exit
+2022/02/02 06:13:24 [warn] 1#1: the "ssl" directive is deprecated, use the "listen ... ssl" directive instead in /etc/nginx/conf.d/000-default.conf:22
+2022/02/02 06:13:24 [notice] 1#1: using the "epoll" event method
+2022/02/02 06:13:24 [notice] 1#1: nginx/1.21.6
+2022/02/02 06:13:24 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/02/02 06:13:24 [notice] 1#1: OS: Linux 3.10.0-1160.31.1.el7.x86_64
+2022/02/02 06:13:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/02/02 06:13:24 [notice] 1#1: start worker processes
+2022/02/02 06:13:24 [notice] 1#1: start worker process 22
+2022/02/02 06:13:24 [notice] 1#1: start worker process 23
+2022/02/02 06:13:24 [notice] 1#1: start worker process 24
+2022/02/02 06:13:26 [error] 23#23: *2 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 06:17:27 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/02/02 06:17:27 [notice] 23#23: gracefully shutting down
+2022/02/02 06:17:27 [notice] 24#24: gracefully shutting down
+2022/02/02 06:17:27 [notice] 22#22: gracefully shutting down
+2022/02/02 06:17:27 [notice] 23#23: exiting
+2022/02/02 06:17:27 [notice] 24#24: exiting
+2022/02/02 06:17:27 [notice] 22#22: exiting
+2022/02/02 06:17:27 [notice] 23#23: exit
+2022/02/02 06:17:27 [notice] 24#24: exit
+2022/02/02 06:17:27 [notice] 22#22: exit
+2022/02/02 06:17:27 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2022/02/02 06:17:27 [notice] 1#1: worker process 22 exited with code 0
+2022/02/02 06:17:27 [notice] 1#1: worker process 23 exited with code 0
+2022/02/02 06:17:27 [notice] 1#1: worker process 24 exited with code 0
+2022/02/02 06:17:27 [notice] 1#1: exit
+2022/02/02 06:17:29 [warn] 1#1: the "ssl" directive is deprecated, use the "listen ... ssl" directive instead in /etc/nginx/conf.d/000-default.conf:22
+2022/02/02 06:17:29 [notice] 1#1: using the "epoll" event method
+2022/02/02 06:17:29 [notice] 1#1: nginx/1.21.6
+2022/02/02 06:17:29 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/02/02 06:17:29 [notice] 1#1: OS: Linux 3.10.0-1160.31.1.el7.x86_64
+2022/02/02 06:17:29 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/02/02 06:17:29 [notice] 1#1: start worker processes
+2022/02/02 06:17:29 [notice] 1#1: start worker process 22
+2022/02/02 06:17:29 [notice] 1#1: start worker process 23
+2022/02/02 06:17:29 [notice] 1#1: start worker process 24
+2022/02/02 06:17:45 [error] 24#24: *2 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 06:17:46 [error] 24#24: *2 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 06:17:53 [error] 24#24: *2 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 185.86.76.17, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 06:34:56 [error] 22#22: *7 open() "/var/www/html/actuator/health" failed (2: No such file or directory), client: 192.241.213.176, server: localhost, request: "GET /actuator/health HTTP/1.1", host: "195.226.192.204"
+2022/02/02 06:44:37 [error] 22#22: *8 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 172.18.0.14, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "mag.sys-ad.ml"
+2022/02/02 06:44:37 [error] 22#22: *8 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.14, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "mag.sys-ad.ml", referrer: "http://mag.sys-ad.ml/"

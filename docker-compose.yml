@@ -4,18 +4,21 @@ services:
     image: varnish:latest
     restart: always
     ports:
-      - "6081:6081"
+      - "80:80"
       - "6085:6085"
     environment:
       - VARNISH_SIZE=2G
     command: "-p default_keep=300"
+    volumes:
+      - "./conf/varnish/:/etc/varnish/"
     depends_on:
+      - "nginx"
+    links:
       - "nginx"      
   nginx:
     image: nginx:latest
     restart: always
     ports:
-      - "80:80"
       - "443:443"
     volumes:
       - "./www/:/var/www/html/"
