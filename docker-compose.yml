@@ -44,8 +44,6 @@ services:
     image: mrrkat/php74-fpm
     container_name: php74
     restart: always
-    environment:
-      - PHP_MEMORY_LIMIT=512M
     volumes:
       - "./www/:/var/www/html/"
       - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
