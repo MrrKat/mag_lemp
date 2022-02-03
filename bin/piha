@@ -1,0 +1,20 @@
+#!/bin/bash
+change_vers() {
+sed -i  "s/fastcgi_pass.*/fastcgi_pass $piha:9000;/" /etc/nginx/conf.d/$i
+chang="1"
+}
+
+chang="0"
+if [[ -f /var/www/html/.php81 ]]; then piha="php81";
+elif [[ -f /var/www/html/.php74 ]]; then piha="php74";
+elif [[ -f /var/www/html/.php73 ]]; then piha="php73";
+elif [[ -f /var/www/html/.php72 ]]; then piha="php72";
+elif [[ -f /var/www/html/.php56 ]]; then piha="php56";
+else piha="php81"
+fi
+
+for i in `ls /etc/nginx/conf.d/`;
+do grep $piha /etc/nginx/conf.d/$i || change_vers
+done
+
+if [[ $chang == "1" ]]; then service nginx reload; fi

@@ -39,24 +39,30 @@ services:
     restart: always
     volumes:
       - "./www/:/var/www/html/"
+      - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
   php74:
     image: mrrkat/php74-fpm
     container_name: php74
     restart: always
+    environment:
+      - PHP_MEMORY_LIMIT=512M
     volumes:
       - "./www/:/var/www/html/"
+      - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
   php73:
     image: mrrkat/php73-fpm
     container_name: php73
     restart: always
     volumes:
     - "./www/:/var/www/html/"
+    - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
   php72:
     image: mrrkat/php72-fpm
     container_name: php72
     restart: always
     volumes:
     - "./www/:/var/www/html/"
+    - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
   php56:
     image: mrrkat/php56-fpm
     container_name: php56
@@ -65,6 +71,7 @@ services:
     restart: always
     volumes:
     - "./www/:/var/www/html/"
+    - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
   elasticsearch:
     image: mrrkat/elasticsearch-7.17
     container_name: elasticsearch
