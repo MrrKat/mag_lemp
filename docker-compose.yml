@@ -13,13 +13,15 @@ services:
     volumes:
       - "./conf/varnish/:/etc/varnish/"
     depends_on:
-      - "nginx"
-    links:
-      - "nginx"      
+      - mysql-server
+    network_mode: host
+        #networks:
+        # - br_n      
   nginx:
     image: mrrkat/nginx
     container_name: nginx
     restart: always
+    network_mode: host
     ports:
       - "443:443"
     volumes:
@@ -27,16 +29,23 @@ services:
       - "./conf/vhost/:/etc/nginx/conf.d/"
       - "./logs/nginx/:/var/log/nginx/"
       - "./conf/ssl/:/etc/nginx/ssl/"
-    links:
-      - php81
-      - php74
-      - php73
-      - php72
-      - php56
+    depends_on:
+      - mysql-server
+        #links:
+        #- php81
+        #- php73
+        #- php72
+        #- php74
+        #- php56
+        # networks:
+        #- br_n
   php81:
     image: mrrkat/php81-fpm
     container_name: php81
     restart: always
+    network_mode: host
+    depends_on:
+      - mysql-server
     volumes:
       - "./www/:/var/www/html/"
       - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
@@ -44,6 +53,9 @@ services:
     image: mrrkat/php74-fpm
     container_name: php74
     restart: always
+    network_mode: host
+    depends_on:
+      - mysql-server
     volumes:
       - "./www/:/var/www/html/"
       - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
@@ -51,22 +63,32 @@ services:
     image: mrrkat/php73-fpm
     container_name: php73
     restart: always
+    network_mode: host
+    depends_on:
+      - mysql-server
     volumes:
-    - "./www/:/var/www/html/"
-    - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
+      - "./www/:/var/www/html/"
+      - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
   php72:
     image: mrrkat/php72-fpm
     container_name: php72
     restart: always
+    network_mode: host
+    depends_on:
+      - mysql-server
     volumes:
     - "./www/:/var/www/html/"
     - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
   php56:
     image: mrrkat/php56-fpm
     container_name: php56
+    restart: always
+    network_mode: host
 #    build:
 #      context: ./bin/php56/
     restart: always
+    depends_on:
+      - mysql-server
     volumes:
     - "./www/:/var/www/html/"
     - "./conf/php_conf.d/:/usr/local/etc/php/conf.d/"
@@ -74,6 +96,7 @@ services:
     image: mrrkat/elasticsearch-7.17
     container_name: elasticsearch
     restart: always
+    network_mode: host
     environment:
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
@@ -108,6 +131,7 @@ services:
     image: mrrkat/rabbitmq-3.9
     container_name: rabbitmq
     restart: always
+    network_mode: host
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -115,22 +139,23 @@ services:
     image: mrrkat/mysql-8.0
     container_name: mysql
     restart: always
+    network_mode: host
     environment:
       - MYSQL_ROOT_PASSWORD=luxinten
-      - MYSQL_DATABASE=magento
+      - MYSQL_DATABASE=magento1
       - MYSQL_USER=magento
       - MYSQL_PASSWORD=magento
     volumes:
-      - mysql-data:/var/lib/mysql
       - ./data/db:/db/
     ports:
-      - "3306:3306"
+      - "127.0.0.1:3306:3306"
   phpmyadmin:
     image: mrrkat/phpmyadmin-5.0
     container_name: phpmyadmin
     restart: always
+    network_mode: host
     environment:
-      - PMA_HOST=mysql-server
+      - PMA_HOST=127.0.0.1
       - PMA_USER=root
       - PMA_PASSWORD=luxinten
       - UPLOAD_LIMIT=512M
@@ -140,7 +165,6 @@ services:
     image: mrrkat/redis
     container_name: redis
     restart: always
+    network_mode: host
     ports:
       - "6379:6379"
-volumes:
-  mysql-data:
